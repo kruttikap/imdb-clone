@@ -2,8 +2,13 @@ import React, { Component } from 'react'
 import {BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { createStore } from 'redux';
 import Login from './Login';
-import AboutUs from './AboutUs';
-import ContactUs from './ContactUs';
+import Movies from './Movies';
+import Trailers from "./Trailers"
+import Anticipate from "./Anticipate"
+import Gallery from "./Gallery"
+import { Layout, Menu } from "antd";
+const { Header, Content, Sider, Footer } = Layout;
+
 
 
 
@@ -11,34 +16,25 @@ class Home extends Component {
     
     render() {
 
-        const reducer = function(state, action){
-            if(action.type === "Attack"){
-                return action.payload
-              }
-              return state;
-            }       
-        
-
-        const store = createStore(reducer, "peace");
-
-        
-        store.subscribe(() => {
-                console.log("store is now", store.getState());
-            })
-
-            store.dispatch({type: "Attack", payload: "Iron man"})
 
 
         return (
             <div className="home">
                 <h1>IMDb</h1>
-                <Router>
-                <Link to="/">Home</Link> <br />
-                {/* <Link to="/movies">Movies</Link> <br />
-                <Link to="/login">Sign in</Link> <br />
-                <Link to="/watchlist">Watchlist</Link>
-                <Login /> */}
-                </Router> 
+                <Layout>
+        <Content style={{
+            background: '#fff',
+            padding: 24,
+            margin: 0,
+            minHeight: 280,
+          }}>
+          <Trailers/> <hr />
+          <Gallery/>
+        </Content>
+          <Sider width={300} style={{ background: '#EAECEE' }}>
+        <Anticipate/>
+          </Sider>
+        </Layout>
                 </div>
         )
     }

@@ -1,23 +1,26 @@
 import React, { Component } from 'react'
 
 class Login extends Component {
-    render() {
-        return (
-            <div className="login">
-               <form>
-        <label>
-          Username:
-          <input type="text" />
-        </label>
-        <br /> <br />
-        password:
-        <input type="text"  /> 
-        <br /> <br />
-        <button type="submit">Login</button>
-      </form>
-            </div>
-        )
-    }
+  render() {
+    console.log("Inside Login Component", this.props.handleSubmit)
+    return(
+        <form onSubmit={this.props.handleSubmit}>
+            <input 
+                type="text"
+                placeholder="Enter UserName"
+                value={this.props.name}
+                onChange={this.props.handleChange}
+            />
+            <input 
+                type="password"
+                placeholder="Enter Password"
+                value={this.props.password}
+                onChange={this.props.handleChange}
+            />
+            <input type="submit" value="Login"/>
+        </form>
+    )
+}
 }
 
 export default Login;

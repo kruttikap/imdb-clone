@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import { Card, Icon, Avatar } from 'antd';
 import { Col, Row} from 'antd';
-
 
 const data = [
     {
@@ -20,17 +20,22 @@ const data = [
       src: "https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
     },
   ]
+  
+
+export default class Trailers extends Component {
 
 
-class Movies extends Component {
-    render() {
-        return (
-            <div>
-                <h1>  Movies </h1>
-                <div>
-                <div style={{ background: '#ececec', padding: '10px' }}>
-                <Row gutter={8}>  
-        {
+render() {
+
+    return (
+        <div>
+        <div style={{ background: '#ececec', padding: '10px' }}>
+        <Row gutter={8}>
+          
+  
+            <h1>Trailers</h1>
+          
+          {
       data.map((item, index) => {
         return (<div>
           <Col span={8}>
@@ -46,8 +51,6 @@ class Movies extends Component {
         </Row>
       </div>
       </div>
-      </div>
   );
-}
-}
-export default Movies;
+        }
+      }
