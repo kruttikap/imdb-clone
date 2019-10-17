@@ -48,7 +48,7 @@ class Navbar extends React.Component {
 
 handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Loggedin')
+    console.log('Loggedin', this.props.isLoggedIn)
     localStorage.setItem('isLoggedin', true);
     localStorage.setItem('name', this.state.name);
     localStorage.setItem('password', this.state.password);
@@ -64,9 +64,9 @@ handleLogout = (history) => {
     this.setState({
         isLoggedIn: false
     })
-    return <Redirect 
-      to='/login'
-  />
+  //   return <Redirect 
+  //     to='/login'
+  // />
 }
 
 handleChange = (e) => {
@@ -90,8 +90,8 @@ render() {
       <Menu.Item key="2"><Link to="/movies">Movies</Link></Menu.Item>
       <Menu.Item key="3"><Link to="/watchlist">Watchlist</Link></Menu.Item>
       {
-        this.props.isloggedIn
-         ? <Menu.Item key="4"><Button handleLogout={this.props.handleLogout}/></Menu.Item>
+        this.state.isLoggedIn
+         ? <Menu.Item key="4"><Button handleLogout={this.handleLogout}/></Menu.Item>
          : <Menu.Item key="4"><Link to="/login">Sign In</Link></Menu.Item>
                     }
     </Menu>

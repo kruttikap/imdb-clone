@@ -33,7 +33,7 @@ render() {
         <Row gutter={8}>
           
   
-            <h1>Trailers</h1>
+            <h1>Gallery</h1>
           
           {
       data.map((item, index) => {

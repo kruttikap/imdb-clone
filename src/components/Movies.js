@@ -26,7 +26,7 @@ class Movies extends Component {
     render() {
         return (
             <div>
-                <h1>  Movies </h1>
+                <h1>Movies</h1>
                 <div>
                 <div style={{ background: '#ececec', padding: '10px' }}>
                 <Row gutter={8}>  
